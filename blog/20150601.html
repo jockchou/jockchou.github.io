@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>jockchou</title>
+<title>20150601</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <style type="text/css">
 /* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
@@ -470,15 +470,67 @@ vertical-align:1px;
 </style>
 </head>
 <body>
-<p><img class="logo" src="./img/logo.jpg" alt="jockchou"></p>
-
-<h1 id="jockchou">jockchou</h1>
+<h1 id="-getpagesize-getpagescroll">前端开发实用函数getPageSize，getPageScroll</h1>
 <hr>
-<ul>
-<li><a href="./blog/20150604.md">C语言常用的输入输出函数</a></li><li><a href="./blog/20150603.md">半小时速成PHP基础</a></li><li>[JavaScript类型检测最佳实践][3]</li></ul>
-<hr>
-<p><a href="https://github.com/jockchou" title="Github">Github</a><br><a href="http://weibo.com/u/2558456121" title="weibo">Weibo</a><br>Email:164068300@qq.com<br>Copyright © jockchou </p>
+<p>这两个javascript函数非常实用，用来计算浏览器页面大小，窗口大小，以及滚动高度，源代码如下：</p>
+<pre><code>function getPageSize() {
+    var xScroll, yScroll;
+    if (window.innerHeight &amp;&amp; window.scrollMaxY) {
+        xScroll = window.innerWidth + window.scrollMaxX;
+        yScroll = window.innerHeight + window.scrollMaxY;
+    } else if (document.body.scrollHeight &gt; document.body.offsetHeight) { // all but Explorer Mac
+        xScroll = document.body.scrollWidth;
+        yScroll = document.body.scrollHeight;
+    } else { // Explorer Mac...would also work in Explorer 6 Strict, Mozilla and Safari
+        xScroll = document.body.offsetWidth;
+        yScroll = document.body.offsetHeight;
+    }
+    var windowWidth, windowHeight;
+    if (self.innerHeight) { // all except Explorer
+        if (document.documentElement.clientWidth) {
+            windowWidth = document.documentElement.clientWidth;
+        } else {
+            windowWidth = self.innerWidth;
+        }
+        windowHeight = self.innerHeight;
+    } else if (document.documentElement &amp;&amp; document.documentElement.clientHeight) { // Explorer 6 Strict Mode
+        windowWidth = document.documentElement.clientWidth;
+        windowHeight = document.documentElement.clientHeight;
+    } else if (document.body) { // other Explorers
+        windowWidth = document.body.clientWidth;
+        windowHeight = document.body.clientHeight;
+    }
 
+    var pageHeight, pageWidth;
+    // for small pages with total height less then height of the viewport
+    pageHeight = yScroll &lt; windowHeight ? windowHeight: yScroll;
+    // for small pages with total width less then width of the viewport
+    pageWidth = xScroll &lt; windowWidth ? windowWidth: xScroll;
+    return {
+        pageWidth: pageWidth,
+        pageHeight: pageHeight,
+        windowWidth: windowWidth,
+        windowHeight: windowHeight
+    };
+}
+function getPageScroll() {
+    var xScroll, yScroll;
+    if (self.pageYOffset) {
+        yScroll = self.pageYOffset;
+        xScroll = self.pageXOffset;
+    } else if (document.documentElement &amp;&amp; document.documentElement.scrollTop) { // Explorer 6 Strict
+        yScroll = document.documentElement.scrollTop;
+        xScroll = document.documentElement.scrollLeft;
+    } else if (document.body) { // all other Explorers
+        yScroll = document.body.scrollTop;
+        xScroll = document.body.scrollLeft;
+    }
+    return {
+        xScroll: xScroll,
+        yScroll: yScroll
+    };
+}
+</code></pre>
 </body>
 </html>
 <!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
