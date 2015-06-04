@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>index</title>
+<title>20150604</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <style type="text/css">
 /* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
@@ -468,16 +468,26 @@ vertical-align:1px;
 </style>
 </head>
 <body>
-<p><style>.logo{width:100px;height:100px;border-radius:100%;vertical-align:middle;}</style></p>
-<p><img class="logo" src="./img/logo.jpg" alt="jockchou"></p>
-
-<h1 id="jockchou">jockchou</h1>
+<h1 id="c-">C语言常用的输入输出函数</h1>
 <hr>
-<ul>
-<li><a href="./blog/20150604.md">C语言常用的输入输出函数</a></li></ul>
-<hr>
-<p><a href="https://github.com/jockchou" title="Github">Github</a><br><a href="http://weibo.com/u/2558456121" title="weibo">Weibo</a><br>Email:164068300@qq.com<br>Copyright © jockchou</p>
+<p>函数原型如下：</p>
+<pre><code>#include &lt;stdio.h&gt;
 
+int puts(const char *s);
+char *gets(char *s);
+
+int fputs(const char *s, FILE *stream);
+char *fgets(char *s, int size, FILE *stream);
+
+int putc(int c, FILE *stream);
+int getc(FILE *stream);
+
+int fputc(int c, FILE *stream);
+int fgetc(FILE *stream);
+
+int putchar(int c);
+int getchar(void);
+</code></pre>
 </body>
 </html>
 <!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
