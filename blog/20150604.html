@@ -558,6 +558,30 @@ input your name, please!
 1234567890aaaa
 1234567890a$
 </code></pre><p>当多输出aaaa这几个字符时，输出最后的一个换行符被第一个a占据了，也就是说input_str数组中保存了&#39;1234567890a\0&#39;这12个字符。也就是说<code>char *fgets(char *s, int size, FILE *stream)</code>函数第二个参数如果指定为12，系统最多读取11个字符，并自动添加一个&#39;\0&#39;。</p>
+<p>上面的程序有一个缺点，即fgets()函数会自动保存输入的换行，但是如果空间不够，换行就不会有，这种字符串里(\n)不确定性会给显示带来不方便，如上例所示。一个好的解决办法是，检测fgets()输出的字符串，去掉最后的换行符，fputs输出的时候，手动带上换行符。</p>
+<pre><code>#include&lt;stdio.h&gt;
+#include&lt;string.h&gt;
+
+int main(void)
+{    
+
+    char *pos;
+
+    char input_str[11];
+
+    fputs(&quot;input your name, please!\n&quot;, stdout);
+
+    fgets(input_str, sizeof(input_str) / sizeof(char), stdin);
+
+    if (pos = strchr(input_str, &#39;\n&#39;)) {
+        *pos = &#39;\0&#39;;
+    }
+
+    printf(&quot;%s\n&quot;, input_str);
+
+    return 0;
+}
+</code></pre><p>上例展示了使用<code>strchr()</code>函数来定位输和字符串最后是否有换行符，如果有，则把它去掉。</p>
 
 </body>
 </html>
