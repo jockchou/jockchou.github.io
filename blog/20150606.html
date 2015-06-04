@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>jockchou</title>
+<title>20150606</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <style type="text/css">
 /* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
@@ -470,15 +470,102 @@ vertical-align:1px;
 </style>
 </head>
 <body>
-<p><img class="logo" src="./img/logo.jpg" alt="jockchou"></p>
-
-<h1 id="jockchou">jockchou</h1>
+<h1 id="-css3-logo">用CSS3画公司logo</h1>
 <hr>
-<ul>
-<li><a href="./blog/20150606.html">用CSS3画公司logo</a></li><li><a href="./blog/20150605.html">半小时速成PHP基础</a></li><li><a href="./blog/20150603.html">C语言常用的输入输出函数</a></li><li><a href="./blog/20150603.html">JavaScript类型检测最佳实践</a></li><li><a href="./blog/20150602.html">MooTools源码里的两个实用函数camelize，hyphenate</a></li><li><a href="./blog/20150601.html">前端开发实用函数getPageSize，getPageScroll</a></li></ul>
-<hr>
-<p><a href="https://github.com/jockchou" title="Github">Github</a><br><a href="http://weibo.com/u/2558456121" title="weibo">Weibo</a><br>Email:164068300@qq.com<br>Copyright © jockchou </p>
+<p>本练习主要用到CSS3的元素形变，圆角的一些属性。</p>
+<p>公司的Logo如下图<br><img src="../img/pingo.png" alt="pingo-logo"></p>
+<p>首先构造三个圆圈的HTML结构:</p>
+<pre><code>&lt;div id=&quot;wrap&quot;&gt;
+    &lt;div id=&quot;left-circle&quot;&gt;
+        &lt;div id=&quot;left-inner&quot;&gt;
+            &lt;div id=&quot;small-circle&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;mask&quot;&gt;&lt;/div&gt;
+    &lt;div id=&quot;mask-circle&quot;&gt;&lt;/div&gt;
+    &lt;div id=&quot;right-circle&quot;&gt;
+        &lt;div id=&quot;right-inner&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre><p>定义CSS：</p>
+<pre><code>#wrap {
+    width: 400px;
+    height: 400px;
+    background: #f86768;
+}
 
+#left-circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    background: #fff;
+    position: relative;
+    top: 100px;
+    left: 50px;
+    float: left;
+}
+
+#left-inner {
+    width: 140px;
+    height: 140px;
+    border-radius: 70px;
+    background: #f86768;
+    position: relative;
+    top: 30px;
+    left: 30px;
+}
+
+#right-circle {
+    width: 130px;
+    height: 130px;
+    border-radius: 65px;
+    background: #fff;
+    position: relative;
+    top: 164px;
+    left: 16px;
+    float: left;
+}
+
+#right-inner {
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+    background: #f86768;
+    position: relative;
+    top: 30px;
+    left: 30px;
+}
+
+#small-circle {
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+    background: #fff;
+    position: relative;
+    top: 80px;
+    left: 100px;
+}
+
+#mask {
+    width: 70px;
+    height: 70px;
+    background: #f86768;
+    position: absolute;
+    left: 222px;
+    top: 160px;
+    transform: rotate(-36deg);
+}
+
+#mask-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background: #fff;
+    position: absolute;
+    top: 150px;
+    left: 216px;
+}
+</code></pre>
 </body>
 </html>
 <!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
