@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>jockchou</title>
+<title>20150602</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <style type="text/css">
 /* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
@@ -356,7 +356,7 @@ img.logo{width:100px;height:100px;border-radius:100%;vertical-align:middle;}
     color: #969896;
 }
 
-.pl-c1,.pl-.htmlh,.pl-mm,.pl-mp,.pl-mr,.pl-s1 .pl-v,.pl-s3,.pl-sc,.pl-sv {
+.pl-c1,.pl-mdh,.pl-mm,.pl-mp,.pl-mr,.pl-s1 .pl-v,.pl-s3,.pl-sc,.pl-sv {
     color: #0086b3;
 }
 
@@ -417,17 +417,17 @@ img.logo{width:100px;height:100px;border-radius:100%;vertical-align:middle;}
     font-weight: bold;
 }
 
-.pl-.html,.pl-.htmlhf {
+.pl-md,.pl-mdhf {
     background-color: #ffecec;
     color: #bd2c00;
 }
 
-.pl-.htmlht,.pl-mi1 {
+.pl-mdht,.pl-mi1 {
     background-color: #eaffea;
     color: #55a532;
 }
 
-.pl-.htmlr {
+.pl-mdr {
     color: #795da3;
     font-weight: bold;
 }
@@ -470,15 +470,25 @@ vertical-align:1px;
 </style>
 </head>
 <body>
-<p><img class="logo" src="./img/logo.jpg" alt="jockchou"></p>
-
-<h1 id="jockchou">jockchou</h1>
+<h1 id="mootools-camelize-hyphenate">MooTools源码里的两个实用函数camelize，hyphenate</h1>
 <hr>
-<ul>
-<li><a href="./blog/20150604..html">C语言常用的输入输出函数</a></li><li><a href="./blog/20150303..html">半小时速成PHP基础</a></li><li><a href="./blog/20150603..html">JavaScript类型检测最佳实践</a></li><li><a href="./blog/20150602..html">MooTools源码里的两个实用函数camelize，hyphenate</a></li></ul>
-<hr>
-<p><a href="https://github.com/jockchou" title="Github">Github</a><br><a href="http://weibo.com/u/2558456121" title="weibo">Weibo</a><br>Email:164068300@qq.com<br>Copyright © jockchou </p>
+<p>这两个函数非常实用，用来转化陀峰和中划线命名，源码如下：</p>
+<pre><code>function camelize(str) {
+    return (str + &quot;&quot;).replace(/-\D/g,
+    function(match) {
+        return match.charAt(1).toUpperCase();
+    });
+}
+camelize(&quot;border-bottom-color&quot;); // &quot;borderBottomColor&quot;
 
+function hyphenate(str) {
+    return (str + &quot;&quot;).replace(/[A-Z]/g,
+    function(match) {
+        return &quot;-&quot; + match.toLowerCase();
+    });
+}
+hyphenate(&quot;borderBottomColor&quot;); // &quot;border-bottom-color&quot;
+</code></pre>
 </body>
 </html>
 <!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
