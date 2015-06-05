@@ -1,484 +1,269 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>20150604</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<style type="text/css">
-/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
-/* Author: Nicolas Hery - http://nicolashery.com */
-/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
-/* Source: https://github.com/nicolahery/markdownpad-github */
-
-/* RESET
-=============================================================================*/
-
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
-
-/* BODY
-=============================================================================*/
-
-body {
-  font-family: Helvetica, arial, freesans, clean, sans-serif;
-  font-size: 14px;
-  line-height: 1.6;
-  color: #333;
-  background-color: #fff;
-  padding: 20px;
-  max-width: 960px;
-  margin: 0 auto;
-}
-
-body>*:first-child {
-  margin-top: 0 !important;
-}
-
-body>*:last-child {
-  margin-bottom: 0 !important;
-}
-
-/* BLOCKS
-=============================================================================*/
-
-p, blockquote, ul, ol, dl, table, pre {
-  margin: 15px 0;
-}
-
-/* HEADERS
-=============================================================================*/
-
-h1, h2, h3, h4, h5, h6 {
-  margin: 20px 0 10px;
-  padding: 0;
-  font-weight: bold;
-  -webkit-font-smoothing: antialiased;
-}
-
-h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
-  font-size: inherit;
-}
-
-h1 {
-  font-size: 28px;
-  color: #000;
-}
-
-h2 {
-  font-size: 24px;
-  border-bottom: 1px solid #ccc;
-  color: #000;
-}
-
-h3 {
-  font-size: 18px;
-}
-
-h4 {
-  font-size: 16px;
-}
-
-h5 {
-  font-size: 14px;
-}
-
-h6 {
-  color: #777;
-  font-size: 14px;
-}
-
-body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
-  margin-top: 0;
-  padding-top: 0;
-}
-
-a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
-  margin-top: 0;
-  padding-top: 0;
-}
-
-h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
-  margin-top: 10px;
-}
-
-/* LINKS
-=============================================================================*/
-
-a {
-  color: #4183C4;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* LISTS
-=============================================================================*/
-
-ul, ol {
-  padding-left: 30px;
-}
-
-ul li > :first-child, 
-ol li > :first-child, 
-ul li ul:first-of-type, 
-ol li ol:first-of-type, 
-ul li ol:first-of-type, 
-ol li ul:first-of-type {
-  margin-top: 0px;
-}
-
-ul ul, ul ol, ol ol, ol ul {
-  margin-bottom: 0;
-}
-
-dl {
-  padding: 0;
-}
-
-dl dt {
-  font-size: 14px;
-  font-weight: bold;
-  font-style: italic;
-  padding: 0;
-  margin: 15px 0 5px;
-}
-
-dl dt:first-child {
-  padding: 0;
-}
-
-dl dt>:first-child {
-  margin-top: 0px;
-}
-
-dl dt>:last-child {
-  margin-bottom: 0px;
-}
-
-dl dd {
-  margin: 0 0 15px;
-  padding: 0 15px;
-}
-
-dl dd>:first-child {
-  margin-top: 0px;
-}
-
-dl dd>:last-child {
-  margin-bottom: 0px;
-}
-
-/* CODE
-=============================================================================*/
-
-pre, code, tt {
-  font-size: 12px;
-  font-family: Consolas, "Liberation Mono", Courier, monospace;
-}
-
-code, tt {
-  margin: 0 0px;
-  padding: 0px 0px;
-  white-space: nowrap;
-  border: 1px solid #eaeaea;
-  background-color: #f8f8f8;
-  border-radius: 3px;
-}
-
-pre>code {
-  margin: 0;
-  padding: 0;
-  white-space: pre;
-  border: none;
-  background: transparent;
-}
-
-pre {
-  background-color: #f8f8f8;
-  border: 1px solid #ccc;
-  font-size: 13px;
-  line-height: 19px;
-  overflow: auto;
-  padding: 6px 10px;
-  border-radius: 3px;
-}
-
-pre code, pre tt {
-  background-color: transparent;
-  border: none;
-}
-
-kbd {
-    -moz-border-bottom-colors: none;
-    -moz-border-left-colors: none;
-    -moz-border-right-colors: none;
-    -moz-border-top-colors: none;
-    background-color: #DDDDDD;
-    background-image: linear-gradient(#F1F1F1, #DDDDDD);
-    background-repeat: repeat-x;
-    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
-    border-image: none;
-    border-radius: 2px 2px 2px 2px;
-    border-style: solid;
-    border-width: 1px;
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-    line-height: 10px;
-    padding: 1px 4px;
-}
-
-/* QUOTES
-=============================================================================*/
-
-blockquote {
-  border-left: 4px solid #DDD;
-  padding: 0 15px;
-  color: #777;
-}
-
-blockquote>:first-child {
-  margin-top: 0px;
-}
-
-blockquote>:last-child {
-  margin-bottom: 0px;
-}
-
-/* HORIZONTAL RULES
-=============================================================================*/
-
-hr {
-  clear: both;
-  margin: 15px 0;
-  height: 0px;
-  overflow: hidden;
-  border: none;
-  background: transparent;
-  border-bottom: 4px solid #ddd;
-  padding: 0;
-}
-
-/* TABLES
-=============================================================================*/
-
-table th {
-  font-weight: bold;
-}
-
-table th, table td {
-  border: 1px solid #ccc;
-  padding: 6px 13px;
-}
-
-table tr {
-  border-top: 1px solid #ccc;
-  background-color: #fff;
-}
-
-table tr:nth-child(2n) {
-  background-color: #f8f8f8;
-}
-
-/* IMAGES
-=============================================================================*/
-
-img {
-  max-width: 100%
-}
-
-img.logo{width:100px;height:100px;border-radius:100%;vertical-align:middle;}
-</style>
-<style type="text/css">
-.highlight  { background: #ffffff; }
-.highlight .c { color: #999988; font-style: italic } /* Comment */
-.highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
-.highlight .k { font-weight: bold } /* Keyword */
-.highlight .o { font-weight: bold } /* Operator */
-.highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
-.highlight .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
-.highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
-.highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
-.highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
-.highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
-.highlight .ge { font-style: italic } /* Generic.Emph */
-.highlight .gr { color: #aa0000 } /* Generic.Error */
-.highlight .gh { color: #999999 } /* Generic.Heading */
-.highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
-.highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
-.highlight .go { color: #888888 } /* Generic.Output */
-.highlight .gp { color: #555555 } /* Generic.Prompt */
-.highlight .gs { font-weight: bold } /* Generic.Strong */
-.highlight .gu { color: #aaaaaa } /* Generic.Subheading */
-.highlight .gt { color: #aa0000 } /* Generic.Traceback */
-.highlight .kc { font-weight: bold } /* Keyword.Constant */
-.highlight .kd { font-weight: bold } /* Keyword.Declaration */
-.highlight .kp { font-weight: bold } /* Keyword.Pseudo */
-.highlight .kr { font-weight: bold } /* Keyword.Reserved */
-.highlight .kt { color: #445588; font-weight: bold } /* Keyword.Type */
-.highlight .m { color: #009999 } /* Literal.Number */
-.highlight .s { color: #d14 } /* Literal.String */
-.highlight .na { color: #008080 } /* Name.Attribute */
-.highlight .nb { color: #0086B3 } /* Name.Builtin */
-.highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
-.highlight .no { color: #008080 } /* Name.Constant */
-.highlight .ni { color: #800080 } /* Name.Entity */
-.highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
-.highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
-.highlight .nn { color: #555555 } /* Name.Namespace */
-.highlight .nt { color: #000080 } /* Name.Tag */
-.highlight .nv { color: #008080 } /* Name.Variable */
-.highlight .ow { font-weight: bold } /* Operator.Word */
-.highlight .w { color: #bbbbbb } /* Text.Whitespace */
-.highlight .mf { color: #009999 } /* Literal.Number.Float */
-.highlight .mh { color: #009999 } /* Literal.Number.Hex */
-.highlight .mi { color: #009999 } /* Literal.Number.Integer */
-.highlight .mo { color: #009999 } /* Literal.Number.Oct */
-.highlight .sb { color: #d14 } /* Literal.String.Backtick */
-.highlight .sc { color: #d14 } /* Literal.String.Char */
-.highlight .sd { color: #d14 } /* Literal.String.Doc */
-.highlight .s2 { color: #d14 } /* Literal.String.Double */
-.highlight .se { color: #d14 } /* Literal.String.Escape */
-.highlight .sh { color: #d14 } /* Literal.String.Heredoc */
-.highlight .si { color: #d14 } /* Literal.String.Interpol */
-.highlight .sx { color: #d14 } /* Literal.String.Other */
-.highlight .sr { color: #009926 } /* Literal.String.Regex */
-.highlight .s1 { color: #d14 } /* Literal.String.Single */
-.highlight .ss { color: #990073 } /* Literal.String.Symbol */
-.highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
-.highlight .vc { color: #008080 } /* Name.Variable.Class */
-.highlight .vg { color: #008080 } /* Name.Variable.Global */
-.highlight .vi { color: #008080 } /* Name.Variable.Instance */
-.highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
-.pl-c {
-    color: #969896;
-}
-
-.pl-c1,.pl-mdh,.pl-mm,.pl-mp,.pl-mr,.pl-s1 .pl-v,.pl-s3,.pl-sc,.pl-sv {
-    color: #0086b3;
-}
-
-.pl-e,.pl-en {
-    color: #795da3;
-}
-
-.pl-s1 .pl-s2,.pl-smi,.pl-smp,.pl-stj,.pl-vo,.pl-vpf {
-    color: #333;
-}
-
-.pl-ent {
-    color: #63a35c;
-}
-
-.pl-k,.pl-s,.pl-st {
-    color: #a71d5d;
-}
-
-.pl-pds,.pl-s1,.pl-s1 .pl-pse .pl-s2,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre,.pl-src,.pl-v {
-    color: #df5000;
-}
-
-.pl-id {
-    color: #b52a1d;
-}
-
-.pl-ii {
-    background-color: #b52a1d;
-    color: #f8f8f8;
-}
-
-.pl-sr .pl-cce {
-    color: #63a35c;
-    font-weight: bold;
-}
-
-.pl-ml {
-    color: #693a17;
-}
-
-.pl-mh,.pl-mh .pl-en,.pl-ms {
-    color: #1d3e81;
-    font-weight: bold;
-}
-
-.pl-mq {
-    color: #008080;
-}
-
-.pl-mi {
-    color: #333;
-    font-style: italic;
-}
-
-.pl-mb {
-    color: #333;
-    font-weight: bold;
-}
-
-.pl-md,.pl-mdhf {
-    background-color: #ffecec;
-    color: #bd2c00;
-}
-
-.pl-mdht,.pl-mi1 {
-    background-color: #eaffea;
-    color: #55a532;
-}
-
-.pl-mdr {
-    color: #795da3;
-    font-weight: bold;
-}
-
-.pl-mo {
-    color: #1d3e81;
-}
-.task-list {
-padding-left:10px;
-margin-bottom:0;
-}
-
-.task-list li {
-    margin-left: 20px;
-}
-
-.task-list-item {
-list-style-type:none;
-padding-left:10px;
-}
-
-.task-list-item label {
-font-weight:400;
-}
-
-.task-list-item.enabled label {
-cursor:pointer;
-}
-
-.task-list-item+.task-list-item {
-margin-top:3px;
-}
-
-.task-list-item-checkbox {
-display:inline-block;
-margin-left:-20px;
-margin-right:3px;
-vertical-align:1px;
-}
-</style>
-<meta name="viewport" content="width=device-width" />
-<meta name="author" content="jockchou" />
-<link rel="profile" href="http://gmpg.org/xfn/11" />
-<link href="http://jockchou.github.io/img/logo.jpg" rel="shortcut icon">
-<meta name="description" content="jockchou的博客" />
-<meta name="keywords" content="CodeIgniter,PHP,PHP框架,MVC框架,MySQL,MySQL数据库,Linux,javascript,C语言" />
-</head>
-<body>
-<h1 id="c-">C语言常用的输入输出函数</h1>
+<!DOCTYPE HTML>
+<html lang="zh-tw" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>C语言常用的输入输出函数 | jockchou</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.1.0">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../blog/20150603.html" />
+    
+    
+    <link rel="prev" href="../blog/20150605.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book" data-level="3" data-basepath=".." data-revision="Fri Jun 05 2015 21:16:31 GMT+0800 (中国标准时间)">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="輸入並搜尋" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        
+        
+        
+
+        
+
+        
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                        介紹
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="blog/20150606.html">
+            
+                
+                    <a href="../blog/20150606.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        用CSS3画公司logo
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="blog/20150605.html">
+            
+                
+                    <a href="../blog/20150605.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        半小时速成PHP基础
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="3" data-path="blog/20150604.html">
+            
+                
+                    <a href="../blog/20150604.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        C语言常用的输入输出函数
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="blog/20150603.html">
+            
+                
+                    <a href="../blog/20150603.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        JavaScript类型检测最佳实践
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="blog/20150602.html">
+            
+                
+                    <a href="../blog/20150602.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        两个实用函数camelize，hyphenate
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="blog/20150601.html">
+            
+                
+                    <a href="../blog/20150601.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        前端函数getPageSize，getPageScroll
+                    </a>
+                
+            
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                本書使用 GitBook 釋出
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="目錄"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="搜尋"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="字型設定"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">襯線體</button>
+        <button type="button" data-font="1" class="button">無襯線體</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">白色</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">棕褐色</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">夜間</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="分享"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    分享到 Twitter
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    分享到 Google
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    分享到 Facebook
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    分享到 Weibo
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    分享到 Instapaper
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+    
+
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >jockchou</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="c%E8%AF%AD%E8%A8%80%E5%B8%B8%E7%94%A8%E7%9A%84%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E5%87%BD%E6%95%B0">C&#x8BED;&#x8A00;&#x5E38;&#x7528;&#x7684;&#x8F93;&#x5165;&#x8F93;&#x51FA;&#x51FD;&#x6570;</h1>
 <hr>
-<p>函数原型如下：</p>
+<p>&#x51FD;&#x6570;&#x539F;&#x578B;&#x5982;&#x4E0B;&#xFF1A;</p>
 <pre><code>#include &lt;stdio.h&gt;
 
 int puts(const char *s);
@@ -495,24 +280,35 @@ int fgetc(FILE *stream);
 
 int putchar(int c);
 int getchar(void);
-</code></pre><h2 id="-">函数功能描述</h2>
-<p><strong>puts()</strong><br>输出一个字符串到标准输出流stdout，并在字符串结尾处自动添加换行符。</p>
-<p><strong>gets()</strong><br>从标准输入设备读取一行字符保存到s指向的缓冲地址中，直到终端输入一个换行符或者读到EOF，并将换行符替换成一个空字符（&#39;\0&#39;）。它不会检查目标缓冲区是否能够容纳输入，所以很不安全。不要使用这个函数，应该使用fgets代替它。</p>
-<p><strong>fputs()</strong><br>fputs()函数是puts的面向文件的版本，第二个参数用来说明输出的文件，可以使用stdout作为来调用，stdout在stdio.h中定义。与puts()不同，fputs()并不为输出自动添加换行符，也不会输出结尾的空字符。</p>
-<p><strong>fgets()</strong><br>gets()函数有一个bug，它不检查预留存储区是否足够容纳输入的内容，fgets()改进了这个问题，它第二个参数让你指定最大读入字符数。同时fgets()会把读到的换行符存到字符串里。第三个参数用来指定读取哪一个文件，从键盘读数据时，可以使用stdin，这个标识符在stdio.h中定义。</p>
-<p><strong>fputc()</strong><br>输出一个字符C到指定文件中，会将C转换成无符号字符类型。</p>
-<p><strong>fgetc()</strong><br>从指定文件中读取下一个字符，返回字符的整数表示，或者是EOF，或者是错误。</p>
-<p><strong>putc()</strong><br>putc()同等于fputc()函数，如果被实现成宏的形式，它的流不能是有副作用的表达式。</p>
-<p><strong>getc()</strong><br>putc()同等于fputc()函数，如果被实现成宏的形式，它的流不能是有副作用的表达式。</p>
-<p><strong>putchar()</strong><br>等同于putc(c, stdout)。</p>
-<p><strong>getchar()</strong><br>等同于getc(stdin)。</p>
-<p>从以上说明我们可以看出，我们不需要记住那么多的函数，只需要使用fgetc()，fputc()他fgets()和fputs()这2组基本可以满足开发需求。其他的要不就是这2组的宏封装，要不就是有Bug，可被替代。同时记住fgets()函数第二个参数用来指定读取的最大长度，输出超过这个长度或者遇到换行或者文件尾，就会返回。fgets()会保留读取的换行，fputs()不会自动添加换行。这样正好匹成一对。把文件指定为stdin或者stdout即可达到输出到标准io设备的效果。</p>
+</code></pre><h2 id="%E5%87%BD%E6%95%B0%E5%8A%9F%E8%83%BD%E6%8F%8F%E8%BF%B0">&#x51FD;&#x6570;&#x529F;&#x80FD;&#x63CF;&#x8FF0;</h2>
+<p><strong>puts()</strong>
+&#x8F93;&#x51FA;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x5230;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#x6D41;stdout&#xFF0C;&#x5E76;&#x5728;&#x5B57;&#x7B26;&#x4E32;&#x7ED3;&#x5C3E;&#x5904;&#x81EA;&#x52A8;&#x6DFB;&#x52A0;&#x6362;&#x884C;&#x7B26;&#x3002;</p>
+<p><strong>gets()</strong>
+&#x4ECE;&#x6807;&#x51C6;&#x8F93;&#x5165;&#x8BBE;&#x5907;&#x8BFB;&#x53D6;&#x4E00;&#x884C;&#x5B57;&#x7B26;&#x4FDD;&#x5B58;&#x5230;s&#x6307;&#x5411;&#x7684;&#x7F13;&#x51B2;&#x5730;&#x5740;&#x4E2D;&#xFF0C;&#x76F4;&#x5230;&#x7EC8;&#x7AEF;&#x8F93;&#x5165;&#x4E00;&#x4E2A;&#x6362;&#x884C;&#x7B26;&#x6216;&#x8005;&#x8BFB;&#x5230;EOF&#xFF0C;&#x5E76;&#x5C06;&#x6362;&#x884C;&#x7B26;&#x66FF;&#x6362;&#x6210;&#x4E00;&#x4E2A;&#x7A7A;&#x5B57;&#x7B26;&#xFF08;&apos;\0&apos;&#xFF09;&#x3002;&#x5B83;&#x4E0D;&#x4F1A;&#x68C0;&#x67E5;&#x76EE;&#x6807;&#x7F13;&#x51B2;&#x533A;&#x662F;&#x5426;&#x80FD;&#x591F;&#x5BB9;&#x7EB3;&#x8F93;&#x5165;&#xFF0C;&#x6240;&#x4EE5;&#x5F88;&#x4E0D;&#x5B89;&#x5168;&#x3002;&#x4E0D;&#x8981;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;fgets&#x4EE3;&#x66FF;&#x5B83;&#x3002;</p>
+<p><strong>fputs()</strong>
+fputs()&#x51FD;&#x6570;&#x662F;puts&#x7684;&#x9762;&#x5411;&#x6587;&#x4EF6;&#x7684;&#x7248;&#x672C;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x7528;&#x6765;&#x8BF4;&#x660E;&#x8F93;&#x51FA;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;stdout&#x4F5C;&#x4E3A;&#x6765;&#x8C03;&#x7528;&#xFF0C;stdout&#x5728;stdio.h&#x4E2D;&#x5B9A;&#x4E49;&#x3002;&#x4E0E;puts()&#x4E0D;&#x540C;&#xFF0C;fputs()&#x5E76;&#x4E0D;&#x4E3A;&#x8F93;&#x51FA;&#x81EA;&#x52A8;&#x6DFB;&#x52A0;&#x6362;&#x884C;&#x7B26;&#xFF0C;&#x4E5F;&#x4E0D;&#x4F1A;&#x8F93;&#x51FA;&#x7ED3;&#x5C3E;&#x7684;&#x7A7A;&#x5B57;&#x7B26;&#x3002;</p>
+<p><strong>fgets()</strong>
+gets()&#x51FD;&#x6570;&#x6709;&#x4E00;&#x4E2A;bug&#xFF0C;&#x5B83;&#x4E0D;&#x68C0;&#x67E5;&#x9884;&#x7559;&#x5B58;&#x50A8;&#x533A;&#x662F;&#x5426;&#x8DB3;&#x591F;&#x5BB9;&#x7EB3;&#x8F93;&#x5165;&#x7684;&#x5185;&#x5BB9;&#xFF0C;fgets()&#x6539;&#x8FDB;&#x4E86;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x5B83;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x8BA9;&#x4F60;&#x6307;&#x5B9A;&#x6700;&#x5927;&#x8BFB;&#x5165;&#x5B57;&#x7B26;&#x6570;&#x3002;&#x540C;&#x65F6;fgets()&#x4F1A;&#x628A;&#x8BFB;&#x5230;&#x7684;&#x6362;&#x884C;&#x7B26;&#x5B58;&#x5230;&#x5B57;&#x7B26;&#x4E32;&#x91CC;&#x3002;&#x7B2C;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#x7528;&#x6765;&#x6307;&#x5B9A;&#x8BFB;&#x53D6;&#x54EA;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x4ECE;&#x952E;&#x76D8;&#x8BFB;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;stdin&#xFF0C;&#x8FD9;&#x4E2A;&#x6807;&#x8BC6;&#x7B26;&#x5728;stdio.h&#x4E2D;&#x5B9A;&#x4E49;&#x3002;</p>
+<p><strong>fputc()</strong>
+&#x8F93;&#x51FA;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;C&#x5230;&#x6307;&#x5B9A;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x4F1A;&#x5C06;C&#x8F6C;&#x6362;&#x6210;&#x65E0;&#x7B26;&#x53F7;&#x5B57;&#x7B26;&#x7C7B;&#x578B;&#x3002;</p>
+<p><strong>fgetc()</strong>
+&#x4ECE;&#x6307;&#x5B9A;&#x6587;&#x4EF6;&#x4E2D;&#x8BFB;&#x53D6;&#x4E0B;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#xFF0C;&#x8FD4;&#x56DE;&#x5B57;&#x7B26;&#x7684;&#x6574;&#x6570;&#x8868;&#x793A;&#xFF0C;&#x6216;&#x8005;&#x662F;EOF&#xFF0C;&#x6216;&#x8005;&#x662F;&#x9519;&#x8BEF;&#x3002;</p>
+<p><strong>putc()</strong>
+putc()&#x540C;&#x7B49;&#x4E8E;fputc()&#x51FD;&#x6570;&#xFF0C;&#x5982;&#x679C;&#x88AB;&#x5B9E;&#x73B0;&#x6210;&#x5B8F;&#x7684;&#x5F62;&#x5F0F;&#xFF0C;&#x5B83;&#x7684;&#x6D41;&#x4E0D;&#x80FD;&#x662F;&#x6709;&#x526F;&#x4F5C;&#x7528;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#x3002;</p>
+<p><strong>getc()</strong>
+putc()&#x540C;&#x7B49;&#x4E8E;fputc()&#x51FD;&#x6570;&#xFF0C;&#x5982;&#x679C;&#x88AB;&#x5B9E;&#x73B0;&#x6210;&#x5B8F;&#x7684;&#x5F62;&#x5F0F;&#xFF0C;&#x5B83;&#x7684;&#x6D41;&#x4E0D;&#x80FD;&#x662F;&#x6709;&#x526F;&#x4F5C;&#x7528;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#x3002;</p>
+<p><strong>putchar()</strong>
+&#x7B49;&#x540C;&#x4E8E;putc(c, stdout)&#x3002;</p>
+<p><strong>getchar()</strong>
+&#x7B49;&#x540C;&#x4E8E;getc(stdin)&#x3002;</p>
+<p>&#x4ECE;&#x4EE5;&#x4E0A;&#x8BF4;&#x660E;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;&#x6211;&#x4EEC;&#x4E0D;&#x9700;&#x8981;&#x8BB0;&#x4F4F;&#x90A3;&#x4E48;&#x591A;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x4F7F;&#x7528;fgetc()&#xFF0C;fputc()&#x4ED6;fgets()&#x548C;fputs()&#x8FD9;2&#x7EC4;&#x57FA;&#x672C;&#x53EF;&#x4EE5;&#x6EE1;&#x8DB3;&#x5F00;&#x53D1;&#x9700;&#x6C42;&#x3002;&#x5176;&#x4ED6;&#x7684;&#x8981;&#x4E0D;&#x5C31;&#x662F;&#x8FD9;2&#x7EC4;&#x7684;&#x5B8F;&#x5C01;&#x88C5;&#xFF0C;&#x8981;&#x4E0D;&#x5C31;&#x662F;&#x6709;Bug&#xFF0C;&#x53EF;&#x88AB;&#x66FF;&#x4EE3;&#x3002;&#x540C;&#x65F6;&#x8BB0;&#x4F4F;fgets()&#x51FD;&#x6570;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x7528;&#x6765;&#x6307;&#x5B9A;&#x8BFB;&#x53D6;&#x7684;&#x6700;&#x5927;&#x957F;&#x5EA6;&#xFF0C;&#x8F93;&#x51FA;&#x8D85;&#x8FC7;&#x8FD9;&#x4E2A;&#x957F;&#x5EA6;&#x6216;&#x8005;&#x9047;&#x5230;&#x6362;&#x884C;&#x6216;&#x8005;&#x6587;&#x4EF6;&#x5C3E;&#xFF0C;&#x5C31;&#x4F1A;&#x8FD4;&#x56DE;&#x3002;fgets()&#x4F1A;&#x4FDD;&#x7559;&#x8BFB;&#x53D6;&#x7684;&#x6362;&#x884C;&#xFF0C;fputs()&#x4E0D;&#x4F1A;&#x81EA;&#x52A8;&#x6DFB;&#x52A0;&#x6362;&#x884C;&#x3002;&#x8FD9;&#x6837;&#x6B63;&#x597D;&#x5339;&#x6210;&#x4E00;&#x5BF9;&#x3002;&#x628A;&#x6587;&#x4EF6;&#x6307;&#x5B9A;&#x4E3A;stdin&#x6216;&#x8005;stdout&#x5373;&#x53EF;&#x8FBE;&#x5230;&#x8F93;&#x51FA;&#x5230;&#x6807;&#x51C6;io&#x8BBE;&#x5907;&#x7684;&#x6548;&#x679C;&#x3002;</p>
 <pre><code>int fputs(const char *s, FILE *stream);
 char *fgets(char *s, int size, FILE *stream);
 
 int fputc(int c, FILE *stream);
 int fgetc(FILE *stream);
-</code></pre><p>注意：<br>有副作用的表达式，指的是表达式执行后，会改变表达式中某些变量的值，例如(++, --)操作。这样的表达式不应该在宏里出现，否则在宏展开时候会出现意想之外的结果。例如计算平方的宏：</p>
+</code></pre><p>&#x6CE8;&#x610F;&#xFF1A;
+&#x6709;&#x526F;&#x4F5C;&#x7528;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x6307;&#x7684;&#x662F;&#x8868;&#x8FBE;&#x5F0F;&#x6267;&#x884C;&#x540E;&#xFF0C;&#x4F1A;&#x6539;&#x53D8;&#x8868;&#x8FBE;&#x5F0F;&#x4E2D;&#x67D0;&#x4E9B;&#x53D8;&#x91CF;&#x7684;&#x503C;&#xFF0C;&#x4F8B;&#x5982;(++, --)&#x64CD;&#x4F5C;&#x3002;&#x8FD9;&#x6837;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#x4E0D;&#x5E94;&#x8BE5;&#x5728;&#x5B8F;&#x91CC;&#x51FA;&#x73B0;&#xFF0C;&#x5426;&#x5219;&#x5728;&#x5B8F;&#x5C55;&#x5F00;&#x65F6;&#x5019;&#x4F1A;&#x51FA;&#x73B0;&#x610F;&#x60F3;&#x4E4B;&#x5916;&#x7684;&#x7ED3;&#x679C;&#x3002;&#x4F8B;&#x5982;&#x8BA1;&#x7B97;&#x5E73;&#x65B9;&#x7684;&#x5B8F;&#xFF1A;</p>
 <pre><code>#include&lt;stdio.h&gt;
 
 #define MACRO_SQRT(x) (x)*(x)       
@@ -532,16 +328,16 @@ int main(void)
 
     return 0;
 }
-</code></pre><p>宏与函数的区别在于，函数的参数是如果是表达式，会先计算出表达式的结果，再传递给函数使用。而宏是先展开，再计算表达式的值。宏展开后是这个样子的:</p>
-<pre><code>（++n）* (++n)
-</code></pre><p>2次++后，n的值为7，结果便是7*7=49。为了避免这种问题，在给宏传递参数时，不要使用有副作用的表达式，即表达式中变量值会变化的表达式。</p>
-<h1 id="-">代码举例</h1>
+</code></pre><p>&#x5B8F;&#x4E0E;&#x51FD;&#x6570;&#x7684;&#x533A;&#x522B;&#x5728;&#x4E8E;&#xFF0C;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x662F;&#x5982;&#x679C;&#x662F;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x4F1A;&#x5148;&#x8BA1;&#x7B97;&#x51FA;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x518D;&#x4F20;&#x9012;&#x7ED9;&#x51FD;&#x6570;&#x4F7F;&#x7528;&#x3002;&#x800C;&#x5B8F;&#x662F;&#x5148;&#x5C55;&#x5F00;&#xFF0C;&#x518D;&#x8BA1;&#x7B97;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x503C;&#x3002;&#x5B8F;&#x5C55;&#x5F00;&#x540E;&#x662F;&#x8FD9;&#x4E2A;&#x6837;&#x5B50;&#x7684;:</p>
+<pre><code>&#xFF08;++n&#xFF09;* (++n)
+</code></pre><p>2&#x6B21;++&#x540E;&#xFF0C;n&#x7684;&#x503C;&#x4E3A;7&#xFF0C;&#x7ED3;&#x679C;&#x4FBF;&#x662F;7*7=49&#x3002;&#x4E3A;&#x4E86;&#x907F;&#x514D;&#x8FD9;&#x79CD;&#x95EE;&#x9898;&#xFF0C;&#x5728;&#x7ED9;&#x5B8F;&#x4F20;&#x9012;&#x53C2;&#x6570;&#x65F6;&#xFF0C;&#x4E0D;&#x8981;&#x4F7F;&#x7528;&#x6709;&#x526F;&#x4F5C;&#x7528;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x5373;&#x8868;&#x8FBE;&#x5F0F;&#x4E2D;&#x53D8;&#x91CF;&#x503C;&#x4F1A;&#x53D8;&#x5316;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#x3002;</p>
+<h1 id="%E4%BB%A3%E7%A0%81%E4%B8%BE%E4%BE%8B">&#x4EE3;&#x7801;&#x4E3E;&#x4F8B;</h1>
 <pre><code>#include&lt;stdio.h&gt;
 
 int main(void)
 {    
-    /*假设想输入1234567890这10个字符，
-    * 多出的2个空间用来保存输入的换行符和自动添加的空字符(\0)
+    /*&#x5047;&#x8BBE;&#x60F3;&#x8F93;&#x5165;1234567890&#x8FD9;10&#x4E2A;&#x5B57;&#x7B26;&#xFF0C;
+    * &#x591A;&#x51FA;&#x7684;2&#x4E2A;&#x7A7A;&#x95F4;&#x7528;&#x6765;&#x4FDD;&#x5B58;&#x8F93;&#x5165;&#x7684;&#x6362;&#x884C;&#x7B26;&#x548C;&#x81EA;&#x52A8;&#x6DFB;&#x52A0;&#x7684;&#x7A7A;&#x5B57;&#x7B26;(\0)
     */
     char input_str[12];
 
@@ -553,7 +349,7 @@ int main(void)
 
     return 0;
 }
-</code></pre><p>测试输出：</p>
+</code></pre><p>&#x6D4B;&#x8BD5;&#x8F93;&#x51FA;&#xFF1A;</p>
 <pre><code>$ ./fputs 
 input your name, please!
 1234567890
@@ -563,8 +359,8 @@ $ ./fputs
 input your name, please!
 1234567890aaaa
 1234567890a$
-</code></pre><p>当多输出aaaa这几个字符时，输出最后的一个换行符被第一个a占据了，也就是说input_str数组中保存了&#39;1234567890a\0&#39;这12个字符。也就是说<code>char *fgets(char *s, int size, FILE *stream)</code>函数第二个参数如果指定为12，系统最多读取11个字符，并自动添加一个&#39;\0&#39;。</p>
-<p>上面的程序有一个缺点，即fgets()函数会自动保存输入的换行，但是如果空间不够，换行就不会有，字符串里换行符(\n)的不确定性会给显示带来不方便，正如上例中那样。一个好的解决办法是，检测fgets()输入的字符串，去掉最后的换行符，在输出需要时，再考虑添加换行符。</p>
+</code></pre><p>&#x5F53;&#x591A;&#x8F93;&#x51FA;aaaa&#x8FD9;&#x51E0;&#x4E2A;&#x5B57;&#x7B26;&#x65F6;&#xFF0C;&#x8F93;&#x51FA;&#x6700;&#x540E;&#x7684;&#x4E00;&#x4E2A;&#x6362;&#x884C;&#x7B26;&#x88AB;&#x7B2C;&#x4E00;&#x4E2A;a&#x5360;&#x636E;&#x4E86;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;input_str&#x6570;&#x7EC4;&#x4E2D;&#x4FDD;&#x5B58;&#x4E86;&apos;1234567890a\0&apos;&#x8FD9;12&#x4E2A;&#x5B57;&#x7B26;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;<code>char *fgets(char *s, int size, FILE *stream)</code>&#x51FD;&#x6570;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x5982;&#x679C;&#x6307;&#x5B9A;&#x4E3A;12&#xFF0C;&#x7CFB;&#x7EDF;&#x6700;&#x591A;&#x8BFB;&#x53D6;11&#x4E2A;&#x5B57;&#x7B26;&#xFF0C;&#x5E76;&#x81EA;&#x52A8;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&apos;\0&apos;&#x3002;</p>
+<p>&#x4E0A;&#x9762;&#x7684;&#x7A0B;&#x5E8F;&#x6709;&#x4E00;&#x4E2A;&#x7F3A;&#x70B9;&#xFF0C;&#x5373;fgets()&#x51FD;&#x6570;&#x4F1A;&#x81EA;&#x52A8;&#x4FDD;&#x5B58;&#x8F93;&#x5165;&#x7684;&#x6362;&#x884C;&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x679C;&#x7A7A;&#x95F4;&#x4E0D;&#x591F;&#xFF0C;&#x6362;&#x884C;&#x5C31;&#x4E0D;&#x4F1A;&#x6709;&#xFF0C;&#x5B57;&#x7B26;&#x4E32;&#x91CC;&#x6362;&#x884C;&#x7B26;(\n)&#x7684;&#x4E0D;&#x786E;&#x5B9A;&#x6027;&#x4F1A;&#x7ED9;&#x663E;&#x793A;&#x5E26;&#x6765;&#x4E0D;&#x65B9;&#x4FBF;&#xFF0C;&#x6B63;&#x5982;&#x4E0A;&#x4F8B;&#x4E2D;&#x90A3;&#x6837;&#x3002;&#x4E00;&#x4E2A;&#x597D;&#x7684;&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#x662F;&#xFF0C;&#x68C0;&#x6D4B;fgets()&#x8F93;&#x5165;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x53BB;&#x6389;&#x6700;&#x540E;&#x7684;&#x6362;&#x884C;&#x7B26;&#xFF0C;&#x5728;&#x8F93;&#x51FA;&#x9700;&#x8981;&#x65F6;&#xFF0C;&#x518D;&#x8003;&#x8651;&#x6DFB;&#x52A0;&#x6362;&#x884C;&#x7B26;&#x3002;</p>
 <pre><code>#include&lt;stdio.h&gt;
 #include&lt;string.h&gt;
 
@@ -579,16 +375,44 @@ int main(void)
 
     fgets(input_str, sizeof(input_str) / sizeof(char), stdin);
 
-    if (pos = strchr(input_str, &#39;\n&#39;)) {
-        *pos = &#39;\0&#39;;
+    if (pos = strchr(input_str, &apos;\n&apos;)) {
+        *pos = &apos;\0&apos;;
     }
 
     printf(&quot;%s\n&quot;, input_str);
 
     return 0;
 }
-</code></pre><p>上例展示了使用<code>strchr()</code>函数来定位输入的字符串最后是否有换行符，如果有，则把它去掉。</p>
+</code></pre><p>&#x4E0A;&#x4F8B;&#x5C55;&#x793A;&#x4E86;&#x4F7F;&#x7528;<code>strchr()</code>&#x51FD;&#x6570;&#x6765;&#x5B9A;&#x4F4D;&#x8F93;&#x5165;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x6700;&#x540E;&#x662F;&#x5426;&#x6709;&#x6362;&#x884C;&#x7B26;&#xFF0C;&#x5982;&#x679C;&#x6709;&#xFF0C;&#x5219;&#x628A;&#x5B83;&#x53BB;&#x6389;&#x3002;</p>
 
-</body>
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../blog/20150605.html" class="navigation navigation-prev " aria-label="Previous page: 半小时速成PHP基础"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../blog/20150603.html" class="navigation navigation-next " aria-label="Next page: JavaScript类型检测最佳实践"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
 </html>
-<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
