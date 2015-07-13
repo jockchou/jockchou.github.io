@@ -20,6 +20,7 @@
 * [InnoDB存储引擎]
 	* [InnoDB-发展历史](./blog/innodb/innodb-history.md)
 	* [InnoDB-ACID原则](./blog/innodb/mysql-acid.md)
+	* [InnoDB-体系架构](./blog/innodb/innodb-architecture.md)
 	* [InnoDB-双写缓冲](./blog/innodb/innodb-doublewrite-buffer.md)
 
 * [C语言相关]

@@ -25,7 +25,7 @@
         
     
     
-    <link rel="next" href="../../blog/innodb/innodb-doublewrite-buffer.html" />
+    <link rel="next" href="../../blog/innodb/innodb-architecture.html" />
     
     
     <link rel="prev" href="../../blog/innodb/innodb-history.html" />
@@ -36,7 +36,7 @@
     <body>
         
         
-    <div class="book" data-level="4.2" data-basepath="../.." data-revision="Mon Jul 13 2015 10:14:53 GMT+0800 (中国标准时间)">
+    <div class="book" data-level="4.2" data-basepath="../.." data-revision="Mon Jul 13 2015 17:31:15 GMT+0800 (中国标准时间)">
     
 
 <div class="book-summary">
@@ -327,13 +327,28 @@
             
         </li>
     
-        <li class="chapter " data-level="4.3" data-path="blog/innodb/innodb-doublewrite-buffer.html">
+        <li class="chapter " data-level="4.3" data-path="blog/innodb/innodb-architecture.html">
+            
+                
+                    <a href="../../blog/innodb/innodb-architecture.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                        InnoDB-体系架构
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="blog/innodb/innodb-doublewrite-buffer.html">
             
                 
                     <a href="../../blog/innodb/innodb-doublewrite-buffer.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>4.3.</b>
+                            <b>4.4.</b>
                         
                         InnoDB-双写缓冲
                     </a>
@@ -632,38 +647,42 @@
 <p>ACID&#x6A21;&#x578B;&#x662F;&#x4E00;&#x7EC4;&#x5F3A;&#x8C03;&#x9AD8;&#x53EF;&#x9760;&#x6027;&#x7684;&#x6570;&#x636E;&#x5E93;&#x7CFB;&#x7EDF;&#x8BBE;&#x8BA1;&#x539F;&#x5219;&#x3002;InnoDB&#x5B58;&#x50A8;&#x5F15;&#x64CE;&#x575A;&#x6301;ACID&#x539F;&#x5219;&#xFF0C;&#x786E;&#x4FDD;&#x5373;&#x4F7F;&#x5728;&#x8F6F;&#x4EF6;&#x5D29;&#x6E83;&#x751A;&#x81F3;&#x662F;&#x786C;&#x4EF6;&#x6545;&#x969C;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6570;&#x636E;&#x4E5F;&#x4E0D;&#x4F1A;&#x635F;&#x574F;&#x3002;&#x5F53;&#x4F60;&#x9700;&#x8981;&#x4F9D;&#x8D56;&#x517C;&#x5BB9;ACID&#x539F;&#x5219;&#x7684;&#x4E1A;&#x52A1;&#x65F6;&#xFF0C;&#x4F60;&#x4E0D;&#x5FC5;&#x91CD;&#x590D;&#x9020;&#x8F6E;&#x5B50;&#x53BB;&#x5B9E;&#x73B0;&#x4E00;&#x81F4;&#x6027;&#x68C0;&#x67E5;&#x548C;&#x5D29;&#x6E83;&#x6062;&#x590D;&#x673A;&#x5236;&#x3002;&#x5728;&#x4E00;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x6709;&#x989D;&#x5916;&#x7684;&#x5B89;&#x5168;&#x4FDD;&#x8BC1;&#x673A;&#x5236;&#xFF0C;&#x53EF;&#x9760;&#x7684;&#x786C;&#x4EF6;&#x6761;&#x4EF6;&#xFF0C;&#x6216;&#x8005;&#x5E94;&#x7528;&#x80FD;&#x591F;&#x5BB9;&#x5FCD;&#x5C11;&#x91CF;&#x7684;&#x6570;&#x636E;&#x4E22;&#x5931;&#x548C;&#x4E0D;&#x4E00;&#x81F4;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x8C03;&#x6574;MYSQL&#x8BBE;&#x7F6E;&#xFF0C;&#x727A;&#x7272;&#x6389;ACID&#x7684;&#x4E00;&#x4E9B;&#x53EF;&#x9760;&#x6027;&#x6362;&#x53D6;&#x66F4;&#x9AD8;&#x7684;&#x6027;&#x80FD;&#x548C;&#x6570;&#x636E;&#x541E;&#x5410;&#x91CF;&#x3002;</p>
 <h1 id="acid%E5%8E%9F%E5%88%99">ACID&#x539F;&#x5219;</h1>
 <ul>
-<li>A: atomicity      (&#x539F;&#x5B50;&#x6027;)</li>
-<li>C: consistency    (&#x4E00;&#x81F4;&#x6027;)</li>
-<li>I: isolation       &#xFF08;&#x9694;&#x79BB;&#x6027;&#xFF09;</li>
-<li>D: durability       &#xFF08;&#x6301;&#x4E45;&#x6027;&#xFF09;</li>
+<li>A: atomicity      (&#x539F;&#x5B50;&#x6027;)   </li>
+<li>C: consistency    (&#x4E00;&#x81F4;&#x6027;)    </li>
+<li>I: isolation       &#xFF08;&#x9694;&#x79BB;&#x6027;&#xFF09;  </li>
+<li>D: durability       &#xFF08;&#x6301;&#x4E45;&#x6027;&#xFF09; </li>
 </ul>
 <h1 id="atomicity-%E5%8E%9F%E5%AD%90%E6%80%A7%EF%BC%89">Atomicity(&#x539F;&#x5B50;&#x6027;&#xFF09;</h1>
 <p>&#x539F;&#x5B50;&#x6027;&#x4E3B;&#x8981;&#x6D89;&#x53CA;&#x5230;InnoDB&#x4E8B;&#x52A1;&#x3002;&#x76F8;&#x5173;&#x7684;MYSQL&#x7279;&#x5F81;&#x5305;&#x62EC;&#xFF1A;</p>
-<p>Autocommit
-COMMIT&#x8BED;&#x53E5;
-ROLLBACK&#x8BED;&#x53E5;</p>
+<ul>
+<li>Autocommit  </li>
+<li>COMMIT&#x8BED;&#x53E5;  </li>
+<li>ROLLBACK&#x8BED;&#x53E5;  </li>
+</ul>
 <h1 id="consistency-%E4%B8%80%E8%87%B4%E6%80%A7">Consistency(&#x4E00;&#x81F4;&#x6027;)</h1>
 <p>&#x4E00;&#x81F4;&#x6027;&#x4E3B;&#x8981;&#x6D89;&#x53CA;&#x5230;InnoDB&#x5185;&#x90E8;&#x8F6F;&#x4EF6;&#x5D29;&#x6E83;&#x65F6;&#x7684;&#x6570;&#x636E;&#x4FDD;&#x62A4;&#x6062;&#x590D;&#x673A;&#x5668;&#x3002;&#x76F8;&#x5173;&#x7684;MYSQL&#x7279;&#x5F81;&#x5305;&#x62EC;&#xFF1A;</p>
 <ul>
-<li>InnoDB&#x53CC;&#x5199;&#x7F13;&#x51B2;</li>
-<li>InnoDB&#x5D29;&#x6E83;&#x6062;&#x590D;</li>
+<li>InnoDB&#x53CC;&#x5199;&#x7F13;&#x51B2;  </li>
+<li>InnoDB&#x5D29;&#x6E83;&#x6062;&#x590D;  </li>
 </ul>
 <h1 id="isolation-%E9%9A%94%E7%A6%BB%E6%80%A7">Isolation(&#x9694;&#x79BB;&#x6027;)</h1>
 <p>&#x9694;&#x79BB;&#x6027;&#x4E3B;&#x8981;&#x6D89;&#x53CA;&#x5230;InnoDB&#x5177;&#x4F53;&#x4E8B;&#x52A1;&#x7684;&#x9694;&#x79BB;&#x7EA7;&#x522B;&#x3002;&#x76F8;&#x5173;&#x7684;MYSQL&#x7279;&#x5F81;&#x5305;&#x62EC;&#xFF1A;</p>
-<p>Autocommit
-SET ISOLATION LEVEL&#x8BED;&#x53E5;
-InnoDB&#x9501;&#x7684;&#x4F4E;&#x5C42;&#x7EC6;&#x8282;&#x3002;&#x5728;&#x6027;&#x80FD;&#x8C03;&#x4F18;&#x65F6;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;INFORMATION_SCHEMA&#x8868;&#x770B;&#x5230;&#x8FD9;&#x4E9B;&#x7EC6;&#x8282;</p>
+<ul>
+<li>Autocommit  </li>
+<li>SET ISOLATION LEVEL&#x8BED;&#x53E5;  </li>
+<li>InnoDB&#x9501;&#x7684;&#x4F4E;&#x5C42;&#x7EC6;&#x8282;&#x3002;&#x5728;&#x6027;&#x80FD;&#x8C03;&#x4F18;&#x65F6;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;INFORMATION_SCHEMA&#x8868;&#x770B;&#x5230;&#x8FD9;&#x4E9B;&#x7EC6;&#x8282;   </li>
+</ul>
 <h1 id="durability-%E6%8C%81%E4%B9%85%E6%80%A7">Durability(&#x6301;&#x4E45;&#x6027;)</h1>
 <p>&#x6301;&#x4E45;&#x6027;&#x4E3B;&#x8981;&#x6D89;&#x53CA;MySQL&#x8F6F;&#x4EF6;&#x7279;&#x5F81;&#x4E0E;&#x4F60;&#x5B9E;&#x9645;&#x786C;&#x4EF6;&#x914D;&#x7F6E;&#x7684;&#x76F8;&#x4E92;&#x4F5C;&#x7528;&#x3002;&#x8FD9;&#x4E2A;&#x7279;&#x6027;&#x66F4;&#x591A;&#x7684;&#x53D6;&#x51B3;&#x4E8E;&#x4F60;&#x7684;CPU&#xFF0C;&#x7F51;&#x7EDC;&#xFF0C;&#x548C;&#x5B58;&#x50A8;&#x8BBE;&#x5907;&#x7684;&#x80FD;&#x529B;&#x3002;&#x76F8;&#x5173;&#x7684;MYSQL&#x7279;&#x5F81;&#x5305;&#x62EC;&#xFF1A;</p>
 <ul>
 <li>innodb_doublewrite  </li>
-<li>innodb_flush_log_at_trx_commit</li>
-<li>sync_binlog</li>
-<li>innodb_file_per_table</li>
-<li>&#x78C1;&#x76D8;&#x9A71;&#x52A8;</li>
-<li>&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x662F;&#x5426;&#x652F;&#x6301;fsync()&#x7CFB;&#x7EDF;&#x8C03;&#x7528;</li>
+<li>innodb_flush_log_at_trx_commit  </li>
+<li>sync_binlog  </li>
+<li>innodb_file_per_table  </li>
+<li>&#x78C1;&#x76D8;&#x9A71;&#x52A8;  </li>
+<li>&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x662F;&#x5426;&#x652F;&#x6301;fsync()&#x7CFB;&#x7EDF;&#x8C03;&#x7528;  </li>
 <li>&#x5907;&#x4EFD;&#x7B56;&#x7565;</li>
-<li>&#x5206;&#x5E03;&#x5F0F;</li>
+<li>&#x5206;&#x5E03;&#x5F0F;  </li>
 </ul>
 
                     
@@ -678,7 +697,7 @@ InnoDB&#x9501;&#x7684;&#x4F4E;&#x5C42;&#x7EC6;&#x8282;&#x3002;&#x5728;&#x6027;&#
         <a href="../../blog/innodb/innodb-history.html" class="navigation navigation-prev " aria-label="Previous page: InnoDB-发展历史"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../blog/innodb/innodb-doublewrite-buffer.html" class="navigation navigation-next " aria-label="Next page: InnoDB-双写缓冲"><i class="fa fa-angle-right"></i></a>
+        <a href="../../blog/innodb/innodb-architecture.html" class="navigation navigation-next " aria-label="Next page: InnoDB-体系架构"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
