@@ -18,7 +18,9 @@
 	* [MongoDB-写关注](./blog/mongodb/write-concern.md)
 
 * [InnoDB存储引擎]
-	* [InnoDB-历史](./blog/innodb/innodb-history.md)
+	* [InnoDB-发展历史](./blog/innodb/innodb-history.md)
+	* [InnoDB-ACID原则](./blog/innodb/mysql-acid.md)
+	* [InnoDB-双写缓冲](./blog/innodb/innodb-doublewrite-buffer.md)
 
 * [C语言相关]
 	* [C语言枚举类型](./blog/clang/20150610-enum.md)
