@@ -36,7 +36,7 @@
     <body>
         
         
-    <div class="book" data-level="1.1" data-basepath="../.." data-revision="Wed Jul 15 2015 11:46:55 GMT+0800 (中国标准时间)">
+    <div class="book" data-level="1.1" data-basepath="../.." data-revision="Wed Jul 15 2015 12:16:51 GMT+0800 (中国标准时间)">
     
 
 <div class="book-summary">
@@ -764,9 +764,13 @@ HMGET counter:user:{userID}  praiseCnt hostCnt
 //&#x6307;&#x5B9A;userID&#x70B9;&#x8D5E;&#x6570;+1
 HINCRBY counter:user:{userID}   praiseCnt
 </code></pre><p>&#x7F3A;&#x70B9;&#xFF1A;</p>
+<blockquote>
 <p>&#x8FD9;&#x6837;&#x8BBE;&#x8BA1;&#xFF0C;&#x5982;&#x679C;&#x8981;&#x6279;&#x91CF;&#x67E5;&#x8BE2;&#x591A;&#x4E2A;&#x7528;&#x6237;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5C31;&#x6BD4;&#x8F83;&#x9EBB;&#x70E6;&#xFF0C;&#x4F8B;&#x5982;&#x4E00;&#x6B21;&#x8981;&#x67E5;&#x6307;&#x5B9A;20&#x4E2A;userID&#x7684;&#x8BA1;&#x6570;&#x5668;&#xFF1F;&#x53EA;&#x80FD;&#x5FAA;&#x73AF;&#x6267;&#x884C; HGETALL counter:user:{userID}&#x3002;</p>
+</blockquote>
 <p>&#x4F18;&#x70B9;&#xFF1A;</p>
+<blockquote>
 <p>&#x4EE5;&#x5B9E;&#x4F53;&#x805A;&#x5408;&#x6570;&#x636E;&#xFF0C;&#x65B9;&#x4FBF;&#x6570;&#x636E;&#x7BA1;&#x7406;</p>
+</blockquote>
 <h2 id="redis%E4%BC%98%E5%8C%96%E6%96%B9%E6%A1%88%E4%BA%8C">redis&#x4F18;&#x5316;&#x65B9;&#x6848;&#x4E8C;</h2>
 <p>&#x65B9;&#x6848;&#x4E8C;&#x662F;&#x7528;&#x6765;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x4E00;&#x7684;&#x7F3A;&#x70B9;&#x7684;&#xFF0C;&#x4F9D;&#x7136;&#x662F;&#x91C7;&#x7528;hash&#xFF0C;&#x7ED3;&#x6784;&#x8BBE;&#x8BA1;&#x662F;&#x8FD9;&#x6837;&#x7684;&#xFF1A;</p>
 <pre><code>counter:user:praiseCnt
@@ -799,10 +803,14 @@ counter:user:followCnt
 <pre><code>HMGET counter:user:praiseCnt userID_1001 userID_1002
 </code></pre><p>&#x4E0A;&#x9762;&#x547D;&#x4EE4;&#x53EF;&#x4EE5;&#x6279;&#x91CF;&#x83B7;&#x53D6;&#x591A;&#x4E2A;&#x7528;&#x6237;&#x7684;&#x70B9;&#x8D5E;&#x6570;&#xFF0C;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x4E3A;O(n)&#xFF0C;n&#x4E3A;&#x6307;&#x5B9A;userID&#x7684;&#x6570;&#x91CF;&#x3002;</p>
 <p>&#x4F18;&#x70B9;&#xFF1A;</p>
-<p>&#x662F;&#x89E3;&#x51B3;&#x4E86;&#x6279;&#x91CF;&#x64CD;&#x4F5C;&#x7684;&#x95EE;&#x9898;</p>
+<blockquote>
+<p>&#x89E3;&#x51B3;&#x4E86;&#x6279;&#x91CF;&#x64CD;&#x4F5C;&#x7684;&#x95EE;&#x9898;</p>
+</blockquote>
 <p>&#x7F3A;&#x70B9;&#xFF1A;</p>
-<p>&#x5F53;&#x8981;&#x83B7;&#x53D6;&#x591A;&#x4E2A;&#x8BA1;&#x6570;&#x5668;&#xFF0C;&#x6BD4;&#x5982;&#x540C;&#x65F6;&#x9700;&#x8981;praiseCnt&#xFF0C;hostCnt&#x65F6;&#xFF0C;&#x8981;&#x8BFB;&#x591A;&#x6B21;&#xFF0C;&#x4E0D;&#x8FC7;&#x8981;&#x6BD4;&#x7B2C;&#x4E00;&#x79CD;&#x65B9;&#x6848;&#x8BFB;&#x7684;&#x6B21;&#x6570;&#x8981;&#x5C11;&#x3002;</p>
-<p>&#x4E00;&#x4E2A;hash&#x91CC;&#x7684;&#x5B57;&#x6BB5;&#x5C06;&#x4F1A;&#x975E;&#x5E38;&#x5BA0;&#x5927;&#xFF0C;HMGET&#x4E5F;&#x8BB8;&#x4F1A;&#x6709;&#x6027;&#x80FD;&#x74F6;&#x9888;&#x3002;</p>
+<blockquote>
+<p>&#x5F53;&#x8981;&#x83B7;&#x53D6;&#x591A;&#x4E2A;&#x8BA1;&#x6570;&#x5668;&#xFF0C;&#x6BD4;&#x5982;&#x540C;&#x65F6;&#x9700;&#x8981;praiseCnt&#xFF0C;hostCnt&#x65F6;&#xFF0C;&#x8981;&#x8BFB;&#x591A;&#x6B21;&#xFF0C;&#x4E0D;&#x8FC7;&#x8981;&#x6BD4;&#x7B2C;&#x4E00;&#x79CD;&#x65B9;&#x6848;&#x8BFB;&#x7684;&#x6B21;&#x6570;&#x8981;&#x5C11;&#x3002;
+&#x4E00;&#x4E2A;hash&#x91CC;&#x7684;&#x5B57;&#x6BB5;&#x5C06;&#x4F1A;&#x975E;&#x5E38;&#x5BA0;&#x5927;&#xFF0C;HMGET&#x4E5F;&#x8BB8;&#x4F1A;&#x6709;&#x6027;&#x80FD;&#x74F6;&#x9888;&#x3002;</p>
+</blockquote>
 <h2 id="%E7%94%A8redis%E7%AE%A1%E9%81%93%EF%BC%88pipelining-%E6%9D%A5%E4%BC%98%E5%8C%96%E6%96%B9%E6%A1%88%E4%B8%80">&#x7528;redis&#x7BA1;&#x9053;&#xFF08;Pipelining)&#x6765;&#x4F18;&#x5316;&#x65B9;&#x6848;&#x4E00;</h2>
 <p>&#x5BF9;&#x4E8E;&#x7B2C;&#x4E00;&#x79CD;&#x65B9;&#x6848;&#x7684;&#x7F3A;&#x70B9;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;redis&#x7BA1;&#x9053;&#x6765;&#x4F18;&#x5316;&#xFF0C;&#x4E00;&#x6B21;&#x6027;&#x53D1;&#x9001;&#x591A;&#x4E2A;&#x547D;&#x4EE4;&#x7ED9;redis&#x6267;&#x884C;&#xFF1A;</p>
 <pre><code>$userIDArray = array(1001, 1002, 1003, 1009);
