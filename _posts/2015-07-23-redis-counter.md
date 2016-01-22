@@ -1,12 +1,10 @@
-<!--
-author: jockchou
-date: 2015-07-23
-title: 用redis实现计数器
-tags: redis, 计数器
-category: NoSQL开发
-status: publish
-summary:社交产品业务里有很多计数的地方，比如点赞数，评论数等。点赞操作MySQL执行+1这种写操作,写入非常频繁,对数据库写的压力很大,现整理一个内存存储优化方案供大家一起研究讨论。
--->
+---
+layout: post
+title: "用redis实现计数器"
+date: 2015-07-23 22:21:49
+categories: NoSQL
+tags: redis 计数器
+---
 
 社交产品业务里有很多计数的地方，比如点赞数，评论数等。点赞操作MySQL执行+1这种写操作,写入非常频繁,对数据库写的压力很大,现整理一个内存存储优化方案供大家一起研究讨论。
 

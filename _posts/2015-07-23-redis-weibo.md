@@ -1,12 +1,10 @@
-<!--
-author: jockchou
-date: 2015-07-23
-title: 用redis实现微博关注关系
-tags: redis,微博,关注
-category: NoSQL开发
-status: publish
-summary:由于产品需求的需要，我们做的产品里要实现类似微博里的关注关系。在过去的一篇博客《用MySQL实现微博关注关系的方案分析》分析了MySQL实现方式以及优缺点，这篇博客介绍Redis的实现思路。
--->
+---
+layout: post
+title: "用redis实现微博关注关系"
+date: 2015-07-23 22:21:49
+categories: MySQL
+tags: redis 微博 关注关系
+---
 
 由于产品需求的需要，我们做的产品里要实现类似微博里的关注关系。在过去的一篇博客《用MySQL实现微博关注关系的方案分析》分析了MySQL实现方式以及优缺点，这篇博客介绍Redis的实现思路。
 
@@ -38,7 +36,7 @@ summary:由于产品需求的需要，我们做的产品里要实现类似微博
 
 ## 从集合的图来分析 ##
 
-![关注关系集合图](../img/4.png)
+![关注关系集合图](/assets/img/4.png)
 
 如上图所示。左边的圆表示用户的关注列表，右边的圆表示粉丝列表，下边的圆表示的是要查看的列表（集合）。分别用follow, fans, find来表明这三个集合。
 
