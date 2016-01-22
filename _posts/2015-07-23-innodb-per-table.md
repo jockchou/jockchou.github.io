@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "InnoDB独立表空间"
-date: 2015-08-24 22:21:49
+date: 2015-07-23 10:26:49
 categories: MySQL
 tags: InnoDB MySQL 数据库,表空间
 ---
