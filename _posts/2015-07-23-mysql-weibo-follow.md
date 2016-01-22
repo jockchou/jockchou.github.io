@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "用MySQL实现微博关注关系的方案分析"
+title: "MySQL实现微博关注关系"
 date: 2015-03-23 22:21:49
 categories: MySQL
 tags: MySQL 微博 关注关系
