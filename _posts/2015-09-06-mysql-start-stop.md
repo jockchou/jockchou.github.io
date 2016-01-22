@@ -1,12 +1,10 @@
-<!--
-author: jockchou
-date: 2015-09-06
-title: 如何启动/停止/重启MySQL服务
+---
+layout: post
+title:  "如何启动/停止/重启MySQL服务"
+date: 2015-09-06 22:21:49
+categories: MySQL
 tags: MySQL
-category: MySQL数据库
-status: publish
-summary: 如何启动，停止，重启MySQL服务。
--->
+---
 
 如何启动，停止，重启MySQL服务。
 

@@ -1,12 +1,10 @@
-<!--
-author: jockchou
-date: 2015-07-23
-title: InnoDB历史
-tags: InnoDB,MySQL,数据库
-category: MySQL数据库
-status: publish
-summary: InnoDB是MySQL的数据库引擎之一，为MySQL AB发布binary的标准之一。InnoDB由Innobase Oy公司所开发，2006年五月时由甲骨文公司并购。与传统的ISAM与MyISAM相比，InnoDB的最大特色就是支持了ACID兼容的事务（Transaction）功能，类似于PostgreSQL。
--->
+---
+layout: post
+title:  "InnoDB历史"
+date: 2015-07-23 10:25:49
+categories: MySQL
+tags: InnoDB MySQL
+---
 
 InnoDB是MySQL的数据库引擎之一，为MySQL AB发布binary的标准之一。InnoDB由Innobase Oy公司所开发，2006年五月时由甲骨文公司并购。与传统的ISAM与MyISAM相比，InnoDB的最大特色就是支持了ACID兼容的事务（Transaction）功能，类似于PostgreSQL。
 

@@ -1,12 +1,11 @@
-<!--
-author: jockchou
-date: 2015-07-23
-title: InnoDB内存管理
-tags: InnoDB,MySQL,内存管理
-category: MySQL数据库
-status: publish
-summary: InnoDB缓冲池是通过LRU算法来管理page的。频繁使用的page放在LRU列表的前端，最少使用的page在LRU列表的尾端，缓冲池满了的时候，优先淘汰尾端的page。
--->
+---
+layout: post
+title:  "InnoDB内存管理"
+date: 2015-07-23 10:25:49
+categories: MySQL数据库
+tags: InnoDB MySQL 内存管理
+---
+
 
 InnoDB缓冲池是通过LRU算法来管理page的。频繁使用的page放在LRU列表的前端，最少使用的page在LRU列表的尾端，缓冲池满了的时候，优先淘汰尾端的page。
 

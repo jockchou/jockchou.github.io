@@ -1,12 +1,11 @@
-<!--
-author: jockchou
-date: 2015-07-23
-title: InnoDB双写缓冲技术
-tags: InnoDB,MySQL,双写缓冲
-category: MySQL数据库
-status: publish
-summary: 先简单解释下什么是双写缓冲。InnoDB使用了一种叫做doublewrite的特殊文件flush技术，在把pages写到date files之前，InnoDB先把它们写到一个叫doublewrite buffer的连续区域内，在写doublewrite buffer完成后，InnoDB才会把pages写到data file的适当的位置。如果在写page的过程中发生意外崩溃，InnoDB在稍后的恢复过程中在doublewrite buffer中找到完好的page副本用于恢复。
--->
+---
+layout: post
+title:  "InnoDB双写缓冲技术"
+date: 2015-07-23 10:25:49
+categories: MySQL
+tags: InnoDB MySQL 双写缓冲
+---
+
 
 先简单解释下什么是双写缓冲。InnoDB使用了一种叫做doublewrite的特殊文件flush技术，在把pages写到date files之前，InnoDB先把它们写到一个叫doublewrite buffer的连续区域内，在写doublewrite buffer完成后，InnoDB才会把pages写到data file的适当的位置。如果在写page的过程中发生意外崩溃，InnoDB在稍后的恢复过程中在doublewrite buffer中找到完好的page副本用于恢复。
 

@@ -1,12 +1,10 @@
-<!--
-author: jockchou
-date: 2015-07-23
-title: InnoDB独立表空间
-tags: InnoDB,MySQL,数据库,表空间
-category: MySQL数据库
-status: publish
-summary: 使用过MySQL的同学，刚开始接触最多的莫过于MyISAM表引擎了，这种引擎的数据库会分别创建三个文件：数据文件(.MYD)，索引文件(.MYI)和表结构文件(.frm)。我们可以将某个数据库目录直接迁移到其他数据库也可以正常工作。然而，当你使用InnoDB的时候，一切都变了。
--->
+---
+layout: post
+title: "InnoDB独立表空间"
+date: 2015-08-24 22:21:49
+categories: MySQL
+tags: InnoDB MySQL 数据库,表空间
+---
 
 使用过MySQL的同学，刚开始接触最多的莫过于MyISAM表引擎了，这种引擎的数据库会分别创建三个文件：数据文件(.MYD)，索引文件(.MYI)和表结构文件(.frm)。我们可以将某个数据库目录直接迁移到其他数据库也可以正常工作。然而，当你使用InnoDB的时候，一切都变了。
 

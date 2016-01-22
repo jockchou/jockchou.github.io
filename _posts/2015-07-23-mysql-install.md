@@ -1,12 +1,11 @@
-<!--
-author: jockchou
-date: 2015-08-18
-title: MySQL5.6源码编译安装
-tags: MySQL，源码
-category: MySQL数据库
-status: publish
-summary: 这篇博客将学习如何通过源码编译安装MySQL5.6，安装完后会进一步学习MySQL基本的功能配置以及基础测试。
--->
+---
+layout: post
+title: "MySQL5.6源码编译安装"
+date: 2015-08-24 22:21:49
+categories: MySQL
+tags: MySQL安装
+---
+
 
 这篇博客将学习如何通过源码编译安装MySQL5.6，安装完后会进一步学习MySQL基本的功能配置以及基础测试。
 
