@@ -2,7 +2,7 @@
 layout: post
 title:  "Mosquitto服务器日志分析总结"
 date:   2015-07-23 22:21:49
-categories: Linux服务器
+categories: Linux
 tags: Mosquitto 服务器
 ---
 
