@@ -1,78 +1,42 @@
-# Jekyll-Bootstrap
+# 3-Jekyll Theme
 
-The quickest way to start and publish your Jekyll powered blog. 100% compatible with GitHub pages
+新版 3-Jekyll，当前完成度 80%，预览请访问 [http://peiwen.lu](http://peiwen.lu)，[Github repo](https://github.com/P233/P233.github.io)。
 
-## Usage
-
-For all usage and documentation please see: <http://jekyllbootstrap.com>
-
-## Version
-
-0.3.0 - stable and versioned using [semantic versioning](http://semver.org/).
-
-**NOTE:** 0.3.0 introduces a new theme which is not backwards compatible in the sense it won't _look_ like the old version.
-However, the actual API has not changed at all.
-You might want to run 0.3.0 in a branch to make sure you are ok with the theme design changes.
-
-## Milestones
-
-[0.4.0](https://github.com/plusjade/jekyll-bootstrap/milestones/v%200.4.0) - next release [ETA 03/29/2015]
-
-### GOALS
-
-* No open PRs against master branch.
-* Squash some bugs.
-* Add some new features (low-hanging fruit).
-* Establish social media presence.
+旧版请在 [https://github.com/P233/3-Jekyll/releases](https://github.com/P233/3-Jekyll/releases) 下载。
 
 
-### Bugs
+## 针对旧版的改进
 
-|Bug |Description
-|------|---------------
-|[#86](https://github.com/plusjade/jekyll-bootstrap/issues/86)  |&#x2611; Facebook Comments
-|[#113](https://github.com/plusjade/jekyll-bootstrap/issues/113)|&#x2611; ASSET_PATH w/ page & post
-|[#144](https://github.com/plusjade/jekyll-bootstrap/issues/144)|&#x2610; BASE_PATH w/ FQDN
-|[#227](https://github.com/plusjade/jekyll-bootstrap/issues/227)|&#x2611; Redundant JB/setup
-
-### Features
-
-|Bug |Description
-|------|---------------
-|[#98](https://github.com/plusjade/jekyll-bootstrap/issues/98)  |&#x2611; GIST Integration
-|[#244](https://github.com/plusjade/jekyll-bootstrap/issues/244)|&#x2611; JB/file_exists Helper
-|[#42](https://github.com/plusjade/jekyll-bootstrap/issues/42)  |&#x2611; Sort collections of Pages / Posts
-|[#84](https://github.com/plusjade/jekyll-bootstrap/issues/84)  |&#x2610; Detecting production mode
-
-### TODOS
-
-Review existing pull requests against plusjake/jekyll-bootstrap:master. Merge or close each.
-
-* Create twitter account. Add link / icon on jekyllbootstrap.com.
-* Create blog posts under plusjade/gh-pages, expose on jekyllbootstrap.com, feed to twitter account.
-* Announce state of project, announce roadmap(s), announce new versions as they’re released.
-
-## Contributing
+* 侧边栏使用 Tag 或 Category 做为文章分类，默认 Tag。
+* 自动生成侧边栏分类标签，基本不需要修改模板文件。但标签顺序由 Jekyll 根据时间顺序生成，需要手动调整顺序只能修改 `_includes/sidebar.html`，格式是 `<li class="sidebar-tag" data-filter="TAG">TAG</li>`，替换 `TAG`，大小写敏感。
+* 更加全面的 Sass 变量，方便个性化主题样式。
+* 暂定取消文章的标题目录。
+* 取消了嵌入 Codepen。
 
 
-To contribute to the framework please make sure to checkout your branch based on `jb-development`!!
-This is very important as it allows me to accept your pull request without having to publish a public version release.
+## TODO
 
-Small, atomic Features, bugs, etc.
-Use the `jb-development` branch but note it will likely change fast as pull requests are accepted.
-Please rebase as often as possible when working.
-Work on small, atomic features/bugs to avoid upstream commits affecting/breaking your development work.
+* 搜索功能
+* Webkit 换页动画
+* 改进文章筛选动画
+* <del>集成 Google Analytics</del>
+* 文章时间，Category，Tag 归档页面
+* Favicon
+* Mobile touch swipe
 
-For Big Features or major API extensions/edits:
-This is the one case where I'll accept pull-requests based off the master branch.
-This allows you to work in isolation but it means I'll have to manually merge your work into the next public release.
-Translation : it might take a bit longer so please be patient! (but sincerely thank you).
-
-**Jekyll-Bootstrap Documentation Website.**
-
-The documentation website at <http://jekyllbootstrap.com> is maintained at https://github.com/plusjade/jekyllbootstrap.com
+其他建议欢迎[提交 issue](https://github.com/P233/3-Jekyll/issues/new)
 
 
-## License
+## 使用
 
-[MIT](http://opensource.org/licenses/MIT)
+### 设置 `_config.yml`
+
+`_config.yml` 除基本的站点设置外，新加入了社交链接与评论设置。将需要添加的社交帐号填入对应设置，并取消注释，会在头像下方增加一条社交帐号的链接。支持 Twitter, Weibo, Github, Codepen 以及 Dribbble。此外，填入 Disqus 的 shortname 也会启用 Disqus 评论。 `filter` 选项选择使用 `tag` 或 `category` 作为文章分类。
+
+### 修改样式
+
+样式相关的 Sass 变量都存储在 `/css/main.sass` 文件中，修改这个文件可以满足大部分样式定制的需求。建议首先修改 `$gradient-start` 与 `$gradient-end` 两个变量，给自己的博客使用独一无二的侧边栏背景。
+
+### 替换图片
+
+请不要忘记替换 `/assets/img/` 内的图片。`avatar.jpg` 是侧边栏头像的图片，`qrcode.jpg` 会在提示浏览器不兼容时使用。[QR Code 生成器](https://www.unitag.io/qrcode)
