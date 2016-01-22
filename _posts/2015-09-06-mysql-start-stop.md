@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "如何启动/停止/重启MySQL服务"
-date: 2015-09-06 22:21:49
+title:  "MySQL启动/停止/重启服务"
+date: 2015-03-09 12:21:49
 categories: MySQL
 tags: MySQL
 ---
