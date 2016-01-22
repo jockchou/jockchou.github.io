@@ -13,14 +13,16 @@ MQTT协议：[http://mqtt.org/](http://mqtt.org/ "mqtt")
 
 ----------
 
-## 客户端连接日志 ##
+## 客户端连接日志 ##  
 
 ```
+
 1403334375: New connection from 121.201.8.163 on port 1883.
 
 1403334375: New client connected from 121.201.8.163 as zhoujing (c0, k60, ujoyo).
 
-1403334375: Sending CONNACK to zhoujing (0)
+1403334375: Sending CONNACK to zhoujing (0)  
+
 ```
 
 以上是一个客户端正常连接的日志。
