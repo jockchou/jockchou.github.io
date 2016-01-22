@@ -2,7 +2,7 @@
 layout: post
 title:  "InnoDB体系构架"
 date: 2015-07-23 10:21:49
-categories: MySQL数据库
+categories: MySQL
 tags: InnoDB MySQL
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title:  "InnoDB内存管理"
 date: 2015-07-23 10:25:49
-categories: MySQL数据库
+categories: MySQL
 tags: InnoDB MySQL 内存管理
 ---
 
