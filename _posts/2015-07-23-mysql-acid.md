@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "MySQL数据库和ACID模型"
-date: 2015-08-24 22:21:49
+date: 2015-03-08 22:21:49
 categories: MySQL
 tags: ACID MySQL 数据库
 ---
