@@ -11,7 +11,7 @@ url: "http://jockchou.github.io" # the base hostname & protocol for your site
 
 # Sidebar filter
 # Choose 'tag' or 'category' as filter in sidebar.
-filter: 'tag'
+filter: 'category'
 
 
 # Social account
@@ -23,7 +23,7 @@ github:   jockchou
 
 
 # Comment
-# disqus_shortname: discussion_shortname
+disqus_shortname: jockchou
 
 
 # Google Analytics
@@ -32,6 +32,8 @@ github:   jockchou
 
 # Build settings
 markdown: kramdown
+permalink: date
+
 sass:
   style: compressed
 gems:
