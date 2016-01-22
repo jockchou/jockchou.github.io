@@ -31,7 +31,7 @@ disqus_shortname: jockchou
 
 
 # Build settings
-markdown: kramdown
+markdown: maruku
 permalink: /blog/:year/:month/:day/:title.html
 
 sass:
