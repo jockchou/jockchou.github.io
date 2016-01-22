@@ -32,7 +32,7 @@ disqus_shortname: jockchou
 
 # Build settings
 markdown: kramdown
-permalink: date
+permalink: /blog/:year/:month/:day/:title.html
 
 sass:
   style: compressed
