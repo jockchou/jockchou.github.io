@@ -1,12 +1,10 @@
-<!--
-author: jockchou
-date: 2015-07-23
-title: Mosquitto服务器日志分析总结
-tags: Mosquitto, 服务器
-category: Linux服务器
-status: publish
-summary: Mosquitto是一款实现了消息推送协议MQTT v3.1的开源消息代理软件，提供轻量级的，支持可发布/可订阅的的消息推送模式，使设备对设备之间的短消息通信变得简单，比如现在应用广泛的低功耗传感器，手机、嵌入式计算机、微型控制器等移动设备。
--->
+---
+layout: post
+title:  "Mosquitto服务器日志分析总结"
+date:   2015-07-23 22:21:49
+categories: Linux服务器
+tags: Mosquitto 服务器
+---
 
 Mosquitto是一款实现了消息推送协议MQTT v3.1的开源消息代理软件，提供轻量级的，支持可发布/可订阅的的消息推送模式，使设备对设备之间的短消息通信变得简单，比如现在应用广泛的低功耗传感器，手机、嵌入式计算机、微型控制器等移动设备。
 
