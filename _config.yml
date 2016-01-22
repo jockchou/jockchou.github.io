@@ -31,7 +31,7 @@ duoshuo_shortname: jockchou
 
 
 # Build settings
-markdown: maruku
+markdown: rdiscount
 permalink: /blog/:year/:month/:day/:title.html
 
 sass:

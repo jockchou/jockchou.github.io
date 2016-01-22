@@ -1,13 +1,10 @@
-<!--
-author: jockchou
-date: 2015-08-24
-title: coreseek原理及配置
-tags: coreseek, Sphinx，搜索引擎
-category: Sphinx
-status: publish
-summary: coreseek是一个搜索引擎框架，它可以基于MySQL数据源和mmseg分词构建全文索引，实现高性能的全文搜索服务，本文介绍coreseek的构架原理和MySQL数据源的配置。
--->
-
+---
+layout: post
+title: "coreseek原理及配置"
+date: 2015-08-24 22:21:49
+categories: Sphinx
+tags: coreseek Sphinx 搜索引擎
+---
 coreseek是一个搜索引擎框架，它可以基于MySQL数据源和mmseg分词构建全文索引，实现高性能的全文搜索服务，本文介绍coreseek的构架原理和MySQL数据源的配置。
 
 ## coreseek构架原理 ##

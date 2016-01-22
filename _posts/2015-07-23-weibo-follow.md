@@ -32,10 +32,10 @@ tags: MySQL 微博 关注关系
 用一行纪录表示关注和粉丝，字段u2的值表示粉丝，u1表示被关注者。
 
 Table: user(用户表)  
-![img](./img/3.png)
+![img](/assets/img/3.png)
 
 Table: follower(u2表示粉丝， u1表示被关注的人)  
-![img](./img/1.png)
+![img](/assets/img/1.png)
 
 查询用户id = 1的关注列表
 
@@ -63,7 +63,7 @@ SELECT * FROM follower WHERE (u2 = 1 or u1 = 1) AND (u2 = 5 or u1 = 5) LIMIT 3
 
 id = 1的用户查询所有 id < 5的用户，并显示关系
 
-![img](./img/2.png)
+![img](/assets/img/2.png)
 
 如上图所示，要查询的用户的那个圈，被分成了四个部分（上面讲的四种状态）：
 
