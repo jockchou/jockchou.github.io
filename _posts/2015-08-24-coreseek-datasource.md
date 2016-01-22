@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "coreseek原理及配置"
-date: 2015-08-24 22:21:49
+date: 2015-08-24 22:22:49
 categories: Sphinx
 tags: coreseek Sphinx 搜索引擎
 ---

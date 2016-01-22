@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "coreseek中mmseg词库的导入方法"
-date: 2015-08-24 22:21:49
+date: 2015-08-24 22:26:49
 categories: Sphinx
 tags: coreseek Sphinx 搜索引擎
 ---

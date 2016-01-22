@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "coreseek自动化增量索引配置"
-date: 2015-08-25 22:21:49
+date: 2015-08-24 22:25:49
 categories: Sphinx
 tags: coreseek Sphinx 搜索引擎
 ---
