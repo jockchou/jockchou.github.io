@@ -81,23 +81,32 @@ URL: http://dev.mysql.com/doc/refman/5.7/en/show.html
 
 表相关的：
 
+```
 SHOW INDEX FROM tbl_name [FROM db_name]
 SHOW [FULL] COLUMNS FROM tbl_name [FROM db_name] [like_or_where]
 SHOW TABLE STATUS [FROM db_name] [like_or_where]
+```
 
 查看用户的权限：
+
 ```
 SHOW GRANTS FOR root;
 ```
+
 查看表的列信息：
+
 ```
 SHOW COLUMNS FROM user;
 ```
+
 查看表的索引：
+
 ```
 SHOW INDEX FROM user;
 ```
+
 查看表的状态：
+
 ```
 mysql> SHOW TABLE STATUS FROM mysql WHERE Name='user'\G;
 *************************** 1. row ***************************
@@ -122,25 +131,32 @@ Max_data_length: 281474976710655
 1 row in set (0.00 sec)
 ```
 
+
 查看系统支持的字符集：
+
 ```
 SHOW CHARACTER SET
 ```
+
 查看系统支持的权限：
+
 ```
 SHOW PRIVILEGES;
 ```
 
 查看系统所有的引擎：
+
 ```
 SHOW ENGINES;
 ```
+
 SHOW PROCESSLIST命令：
 用来展示所有正在运行中的处理线程，这些信息也可以在INFORMATION_SCHEMA的PROCESSLIST表中查到。如果拥有 PROCESS 权限，可以查看所有的线程，否则只能查看自己的线程。
 
 ```
 SHOW [FULL] PROCESSLIST;
 ```
+
 SHOW [FULL] PROCESSLIST不能查看后台线程的状态，并且会产生锁的性能消耗，performance_schema.threads表中查看不会。
 
 可以使用KILL命令来终止某个线程。
