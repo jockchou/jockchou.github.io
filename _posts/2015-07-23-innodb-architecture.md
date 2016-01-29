@@ -21,6 +21,7 @@ Master Thread是核心后台线程，主要负责将缓冲池中的数据异步�
 ## IO Thread ##
 
 IO Thread负责IO请求的回调。主要有read, write, insert buffer和log IO Thread。其中read thread和write thread分别使用`innodb_read_io_threads`和`innodb_write_io_threads`参数进行设置。可以通过命令`show engine innodb status`来查看InnoDB中的IO Thread:
+
 ```
 I/O thread 0 state: waiting for i/o request (insert buffer thread)
 I/O thread 1 state: waiting for i/o request (log thread)

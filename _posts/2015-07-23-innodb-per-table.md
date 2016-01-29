@@ -32,11 +32,13 @@ InnoDB默认会将所有的数据库的数据存储在一个共享表空间：ib
 共享表空间insert操作上略有优势，其它都没独立表空间表现好。当启用独立表空间时，请合理调整一下`innodb_open_files`参数。
 
 独立表空间开启方法，在my.cnf中[mysqld]下设置：
+
 ```
 innodb_file_per_table=1
 ```
 
 查看是否开启：
+
 ```
 mysql> show variables like ‘%per_table%’;
 ```
